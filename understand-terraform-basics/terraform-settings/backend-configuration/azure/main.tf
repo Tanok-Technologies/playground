@@ -1,18 +1,14 @@
-# We strongly recommend using the required_providers block to set the
-# Azure Provider source and version being used
+provider "aws" {
+}
+#When authenticating using the Azure CLI or a Service Principal 
 terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "=2.46.0"
-    }
+  backend "azurerm" {
+    resource_group_name  = "POCTANOK"
+    storage_account_name = "pocstorage"
+    container_name       = "pocstorage"
+    key                  = "terraform.tfstate"  
   }
 }
-# Configure the Microsoft Azure Provider
-provider "azurerm" {
-  features {}
-}
-
 module "tags" {
   source = "../../../../modules/aws/commons/tags"
 }
