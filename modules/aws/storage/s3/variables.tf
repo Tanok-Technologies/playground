@@ -24,5 +24,5 @@ variable "tags" {
   default     = {}
 }
 locals {
-  common_tags = merge({Name = "${var.environment}-${var.project}-${var.resource}-s3"},var.tags,)
+  common_tags = merge({ Name = "${var.environment}-${var.project}-${var.resource}-s3" }, var.tags, )
 }
