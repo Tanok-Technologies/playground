@@ -1,7 +1,7 @@
 provider "aws" {
 }
 
-module "tags" {  
+module "tags" {
   source = "github.com/Tanok-Technologies/playground.git/modules/aws/commons/tags"
 }
 

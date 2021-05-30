@@ -1,4 +1,4 @@
-variable "tags"{
+variable "tags" {
   default     = {}
   description = "Tags generales del modulo"
   type        = map(string)

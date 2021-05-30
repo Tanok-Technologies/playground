@@ -26,7 +26,7 @@ data "aws_ami" "this" {
 }
 */
 resource "aws_instance" "web" {
-  ami           = var.ami_id//data.aws_ami.this.id
+  ami           = var.ami_id //data.aws_ami.this.id
   instance_type = var.instance_type
 
   #tags

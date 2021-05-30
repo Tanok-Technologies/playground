@@ -14,3 +14,10 @@ module "modules" {
   resource = "test"
   tags     = module.tags.tags_commons
 }
+// Module documentation
+// https://registry.terraform.io/modules/JeissonO/network/aws/latest
+module "network" {
+  source  = "JeissonO/network/aws"
+  version = "0.0.3"
+  tags    = module.tags.tags_commons
+}
