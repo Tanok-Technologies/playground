@@ -7,3 +7,7 @@ output "instance_public_dns" {
   value       = module.compute.instance_public_dns
   description = "Dms publico de la instancia"
 }
+output "current_time"{
+  value       = timestamp()
+  description = "Fecha actual"
+}
