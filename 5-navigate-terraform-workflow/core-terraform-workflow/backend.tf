@@ -6,5 +6,4 @@ terraform {
       name = "default"
     }
   }
-  required_version = ">= 0.13.0"
 }
