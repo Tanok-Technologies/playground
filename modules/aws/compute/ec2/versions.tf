@@ -3,7 +3,7 @@ terraform {
     aws = {
       source                = "hashicorp/aws"
       version               = ">= 3.7.0"
-      configuration_aliases = [aws.west]
+     // configuration_aliases = [aws.west]
     }
   }
 }
