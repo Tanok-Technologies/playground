@@ -19,8 +19,8 @@ This module will create resources that are used to export a Dynamo Table to an S
   - [Resources](#resources)
   - [Inputs](#inputs)
   - [Outputs](#outputs)
-  - [Use of Module Example](#use-of-module-example)
   - [Job Script](#job-script)
+  - [Use of Module Example](#use-of-module-example)
 
 
 
@@ -103,18 +103,7 @@ This module will create resources that are used to export a Dynamo Table to an S
 | <a name="output_aws_lambda_function_invoke_arn"></a> [aws\_lambda\_function\_invoke\_arn](#output\_aws\_lambda\_function\_invoke\_arn) | ARN to be used for invoking Lambda Function from API Gateway - to be used in aws\_api\_gateway\_integration's uri. |
 <!-- END_TF_DOCS -->
 
-## Use of Module Example
 
-```JSON
-module "dynamo_export" {
-  source                    = "../dynamo-export-to-s3"  
-  resource                  = "table"
-  dynamo_table_arn          = "arn:aws:dynamodb:us-east-2:111122223333:table/table"
-  dynamo_table_name         = "dynamo-table"
-  s3_spark_logs_path        = "s3://{bucket-name}/{logs-path}/"
-  s3_glue_job_script_path   = "s3://{bucket-name}/{script-path}/{script-file}"
-}
-```
 ## Job Script 
 
 You need to create a script job in Python that will be used for the Glue Job that this module going to create.
@@ -147,4 +136,19 @@ format_options={
     })
 job.commit()
 
+```
+
+> This jobs must be stored in a S3 Bucket in your account and you need to pass the file path as variable in **S3_glue_job_script_path** 
+
+## Use of Module Example
+
+```JSON
+module "dynamo_export" {
+  source                    = "../dynamo-export-to-s3"  
+  resource                  = "table"
+  dynamo_table_arn          = "arn:aws:dynamodb:us-east-2:111122223333:table/table"
+  dynamo_table_name         = "dynamo-table"
+  s3_spark_logs_path        = "s3://{bucket-name}/{logs-path}/"
+  s3_glue_job_script_path   = "s3://{bucket-name}/{script-path}/{script-file}"
+}
 ```
