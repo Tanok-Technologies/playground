@@ -142,7 +142,7 @@ job.commit()
 
 ## Use of Module Example
 
-```JSON
+```js
 module "dynamo_export" {
   source                    = "../dynamo-export-to-s3"  
   resource                  = "table"
