@@ -10,7 +10,7 @@
 // Para esta prueba en Vault existe un secret engine con el path (aws/secrets) y un secreto con el nombre (tanok)
 // vault server -dev
 // vault server -dev -dev-root-token-id="estudio"
-/* 
+/*
 export VAULT_ADDR='http://127.0.0.1:8200'
 export VAULT_TOKEN="estudio"
 */
@@ -20,11 +20,11 @@ data "vault_generic_secret" "tanok_secrets" {
   path = "tanok/secrets/bd"
 }
 output "vault_user" {
-  value = data.vault_generic_secret.tanok_secrets.data["user"]
+  value     = data.vault_generic_secret.tanok_secrets.data["user"]
   sensitive = true
 }
 output "vault_pass" {
-  value = data.vault_generic_secret.tanok_secrets.data["pass"]
+  value     = data.vault_generic_secret.tanok_secrets.data["pass"]
   sensitive = true
 }
 // terraform output -json

@@ -18,15 +18,15 @@ data "terraform_remote_state" "admin" {
 }
 
 data "vault_aws_access_credentials" "creds" {
-  backend = data.terraform_remote_state.admin.outputs.backend
-  role    = data.terraform_remote_state.admin.outputs.role   
-  type    = "sts" 
-  ttl     = 3600
+  backend  = data.terraform_remote_state.admin.outputs.backend
+  role     = data.terraform_remote_state.admin.outputs.role
+  type     = "sts"
+  ttl      = 3600
   role_arn = "arn:aws:iam::506080924848:role/default-terraform-role"
 }
 
 provider "aws" {
-  region     = var.region
+  region = var.region
   assume_role {
     role_arn = "arn:aws:iam::506080924848:role/default-terraform-role"
   }

@@ -6,7 +6,7 @@ import boto3
 # Logger Config
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-# JOB Glue Client 
+# JOB Glue Client
 client = boto3.client('glue')
 glueJobName = os.environ['GLUE_JOB_NAME']
 

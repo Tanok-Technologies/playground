@@ -1,4 +1,4 @@
-# AMI of the latest Amazon Linux 2 
+# AMI of the latest Amazon Linux 2
 /*
 data "aws_ami" "this" {
   most_recent = true
@@ -38,4 +38,3 @@ resource "aws_instance" "web" {
     }
   )
 }
-

@@ -54,10 +54,10 @@ Repositorio de Playground enfocado a consolidar y estructurar el conocimiento re
 > terraform destroy
 
 ### Validación y creación de workspace
-> terraform workspace 
-> 
->  **Crear workspace de desarrollo - dev**:  
-> 
+> terraform workspace
+>
+>  **Crear workspace de desarrollo - dev**:
+>
 > terraform workspace new dev
 
 ### Saltar aprobación manual
@@ -66,10 +66,10 @@ Repositorio de Playground enfocado a consolidar y estructurar el conocimiento re
 
 > terraform destroy --auto-approve
 
-### Aplicar formato al código fuente de Terraform 
+### Aplicar formato al código fuente de Terraform
 > terraform fmt -recursive
 
-### Validar configuración de código 
+### Validar configuración de código
 > terraform validate
 
 
@@ -79,15 +79,15 @@ Repositorio de Playground enfocado a consolidar y estructurar el conocimiento re
 
 Para poder realizar la operación de validación de código se puede hacer uso de la herramienta tfsec la cual debe ser previamente instalada.
 
-Para mas información de esta herramienta se puede validar **[tfsec](https://github.com/tfsec/tfsec )**  
+Para mas información de esta herramienta se puede validar **[tfsec](https://github.com/tfsec/tfsec )**
 
-### Escaneo de código con **tfsec** 
-> **Ejemplo 1**: Escaneo recursivo: 
-> 
+### Escaneo de código con **tfsec**
+> **Ejemplo 1**: Escaneo recursivo:
+>
 > tfsec .
-> 
+>
 > **Ejemplo 2**
-> 
+>
 > tfsec ./source_project
 
 ### Excepciones de validación con **tfsec**
@@ -128,14 +128,13 @@ Desde terraform se puede realizar un import de la infraestructura que no fue cre
 3. Ejecutando el comando de importación de terraform de la siguiente manera:
 
 > terraform import {recurso definido en el paso 1} {id del recurso}
-> 
+>
 > terraform import aws_instance.priv-bastion i-00fc4527c169d2eaa
 
 4. Finalmente con el comando terraform show podrá visualizar la configuración completa de la infraestructura
 
 > **Ejemplo**
-> 
+>
 > terraform show -no-color > infra.txt
 
 **Nota:** el comando anterior le permitirá ver la configuración con la que cuenta el recurso para que pueda utilizarla directamente en la plantilla. (esto requiere de modificación de la plantilla de acuerdo a los datos retornados).
-

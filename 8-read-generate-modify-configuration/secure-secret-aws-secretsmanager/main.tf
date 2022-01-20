@@ -2,12 +2,12 @@
   @Autor: jeisson.osoriob@gmail.com
   @Date: Junio 2021
   @Organization: Tanok Tech
-  @Description: Template de prueba para uso de AWS Secrets Manager   
+  @Description: Template de prueba para uso de AWS Secrets Manager
 **/
 provider "aws" {}
 
 // Inicio uso de AWS Secrets Manager
-// Para esta prueba en AWS Secrets managger se creo un secreto con el id (poc-tanok-secret) 
+// Para esta prueba en AWS Secrets managger se creo un secreto con el id (poc-tanok-secret)
 data "aws_secretsmanager_secret_version" "creds" {
   secret_id = "poc-tanok-secret"
 }

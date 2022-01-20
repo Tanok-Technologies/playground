@@ -18,7 +18,7 @@ locals {
 }
 variable "vpc_id" {
   description = "Identificador de la vpc en la cual se creara el SG"
-  type = string 
+  type        = string
 }
 
 
@@ -42,7 +42,3 @@ resource "aws_security_group" "allow_tls" {
   }
 
 }
-
-
-
- 

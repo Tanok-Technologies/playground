@@ -7,7 +7,7 @@
 /*
 terraform {
   backend "consul" {
-    address  = "https://consul-cluster.consul.c1f12400-e362-452b-9aad-8c4824e85db1.aws.hashicorp.cloud"    
+    address  = "https://consul-cluster.consul.c1f12400-e362-452b-9aad-8c4824e85db1.aws.hashicorp.cloud"
     scheme   = "https"
     path     = "tf/terraform.tfstate"
     lock     = true

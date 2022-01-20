@@ -1,6 +1,6 @@
 provider "aws" {
 }
-#When authenticating using the Azure CLI or a Service Principal 
+#When authenticating using the Azure CLI or a Service Principal
 terraform {
   backend "azurerm" {
     resource_group_name  = "POCTANOK"

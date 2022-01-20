@@ -1,11 +1,11 @@
 
 # Dynamo Table Export to S3
 
-This module will create resources that are used to export a Dynamo Table to an S3 Bucket using AWS Glue 
+This module will create resources that are used to export a Dynamo Table to an S3 Bucket using AWS Glue
 
 ## Changes Control
 
-| Version | Date | Responsible | Comments | 
+| Version | Date | Responsible | Comments |
 |--|--|--|--|
 | v.1.0.0 | jun 08, 2021 8:00 pm | [Jeisson Osorio]() | Versión inicial |
 
@@ -104,7 +104,7 @@ This module will create resources that are used to export a Dynamo Table to an S
 <!-- END_TF_DOCS -->
 
 
-## Job Script 
+## Job Script
 
 You need to create a script job in Python that will be used for the Glue Job that this module going to create.
 
@@ -138,13 +138,13 @@ job.commit()
 
 ```
 
-> This jobs must be stored in a S3 Bucket in your account and you need to pass the file path as variable in **S3_glue_job_script_path** 
+> This jobs must be stored in a S3 Bucket in your account and you need to pass the file path as variable in **S3_glue_job_script_path**
 
 ## Use of Module Example
 
 ```js
 module "dynamo_export" {
-  source                    = "../dynamo-export-to-s3"  
+  source                    = "../dynamo-export-to-s3"
   resource                  = "table"
   dynamo_table_arn          = "arn:aws:dynamodb:us-east-2:111122223333:table/table"
   dynamo_table_name         = "dynamo-table"
